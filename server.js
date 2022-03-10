@@ -24,6 +24,8 @@ app.post('/signin', (req, res) => {signin.handleSingin(req, res, knex, bcrypt)})
 app.post('/register', (req, res) => {register.handleRegister(req, res, knex, bcrypt)})
 app.get('/profile/:id', (req, res) => {profile.handleProfileGET(req, res, knex)})
 app.put('/image', (req, res) => {image.handleImage(req, res, knex)})
+
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`app is running on ${process.env.PORT}`);
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
 });
