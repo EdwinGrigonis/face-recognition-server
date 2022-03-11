@@ -25,7 +25,8 @@ app.post('/register', (req, res) => {register.handleRegister(req, res, knex, bcr
 app.get('/profile/:id', (req, res) => {profile.handleProfileGET(req, res, knex)})
 app.put('/image', (req, res) => {image.handleImage(req, res, knex)})
 
-app.listen(process.env.PORT || 8080, () => {
-    const port = server.address().PORT;
-    console.log(`Server is running on ${port}`)
-   });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, err => {
+  if(err) throw err;
+  console.log("%c Server running", "color: green");
+});
