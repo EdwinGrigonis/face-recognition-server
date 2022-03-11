@@ -27,4 +27,5 @@ app.put('/image', (req, res) => {image.handleImage(req, res, knex)})
 
 app.listen(process.env.PORT || 8080, () => {
     const port = server.address().PORT;
+    console.log(`Server is running on ${port}`)
    });
