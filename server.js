@@ -25,7 +25,6 @@ app.post('/register', (req, res) => {register.handleRegister(req, res, knex, bcr
 app.get('/profile/:id', (req, res) => {profile.handleProfileGET(req, res, knex)})
 app.put('/image', (req, res) => {image.handleImage(req, res, knex)})
 
-app.listen(process.env.PORT || 5000, () => {
-    const port = server.address().port;
-    console.log(`Express is working on port ${port}`);
-});
+app.listen(process.env.PORT || 8080, () => {
+    const port = server.address().PORT;
+   });
