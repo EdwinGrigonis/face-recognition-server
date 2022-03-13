@@ -35,3 +35,5 @@ const handleRegister = (req, res, knex, bcrypt) => {
 module.exports = {
     handleRegister: handleRegister
 };
+
+//Looking for help here

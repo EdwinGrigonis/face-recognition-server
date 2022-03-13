@@ -20,6 +20,7 @@ const handleSingin = (req, res, knex, bcrypt) => {
      .catch(err => res.status(400).json('Incorrect details'))
  }
 
+ 
  module.exports = {
     handleSingin: handleSingin
 };
