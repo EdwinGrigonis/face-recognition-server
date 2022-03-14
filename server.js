@@ -10,20 +10,17 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const db = knex({
-  // connect to your own database here:
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : '',
-    database : 'face-detect'
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
 const app = express();
 
 app.use(cors())
-app.use(express.json()); // latest version of exressJS now comes with Body-Parser!
+app.use(express.json());
 
 app.get('/', (req, res)=> { res.send('it is working!!') })
 app.post('/signin', signin.handleSignin(db, bcrypt))
